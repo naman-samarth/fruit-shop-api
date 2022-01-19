@@ -1,0 +1,8 @@
+rootProject.name = 'spring-mvc-rest'
+include 'app'
+include 'api'
+include 'services'
+include 'entities'
+include 'exceptions'
+include 'repositories'
+

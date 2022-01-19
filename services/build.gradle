@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(":entities")
+    implementation project(":repositories")
+    implementation project(":exceptions")
+}
