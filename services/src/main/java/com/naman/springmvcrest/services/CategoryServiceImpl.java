@@ -1,9 +1,9 @@
-package com.naman.springmvcrest.services.impl;
+package com.naman.springmvcrest.services;
 
+import com.naman.springmvcrest.domain.Category;
 import com.naman.springmvcrest.mapper.CategoryMapper;
 import com.naman.springmvcrest.model.CategoryDTO;
 import com.naman.springmvcrest.repositories.CategoryRepository;
-import com.naman.springmvcrest.services.CategoryService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,12 +25,19 @@ public class CategoryServiceImpl implements CategoryService {
     public List<CategoryDTO> getAllCategories() {
         return categoryRepository.findAll()
                 .stream()
-                .map(categoryMapper::categoryToCategoryDTO)
+                .map(category -> {
+                    CategoryDTO categoryDTO = categoryMapper.categoryToCategoryDTO(category);
+                    categoryDTO.setCategoryUrl(CategoryDTO.BASE_URL + "/" + category.getId());
+                    return categoryDTO;
+                })
                 .collect(Collectors.toList());
     }
 
     @Override
     public CategoryDTO getCategoryByName(String name) {
-        return categoryMapper.categoryToCategoryDTO(categoryRepository.findByName(name));
+        Category category = categoryRepository.findByName(name);
+        CategoryDTO categoryDTO = categoryMapper.categoryToCategoryDTO(category);
+        categoryDTO.setCategoryUrl(CategoryDTO.BASE_URL + "/" + category.getId());
+        return categoryDTO;
     }
 }

@@ -1,11 +1,10 @@
-package com.naman.springmvcrest.services.impl;
+package com.naman.springmvcrest.services;
 
 import com.naman.springmvcrest.domain.Vendor;
 import com.naman.springmvcrest.exceptions.ResourceNotFoundException;
 import com.naman.springmvcrest.mapper.VendorMapper;
 import com.naman.springmvcrest.model.VendorDTO;
 import com.naman.springmvcrest.repositories.VendorRepository;
-import com.naman.springmvcrest.services.VendorService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

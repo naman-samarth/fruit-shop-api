@@ -21,7 +21,6 @@ class CategoryMapperTest {
         category.setName(NAME);
 
         CategoryDTO expectedCategoryDTO = new CategoryDTO();
-        expectedCategoryDTO.setId(ID);
         expectedCategoryDTO.setName(NAME);
 
         CategoryDTO actualCategoryDTO = mapper.categoryToCategoryDTO(category);

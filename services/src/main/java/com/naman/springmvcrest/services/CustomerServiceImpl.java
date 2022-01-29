@@ -1,4 +1,4 @@
-package com.naman.springmvcrest.services.impl;
+package com.naman.springmvcrest.services;
 
 
 import com.naman.springmvcrest.domain.Customer;
@@ -6,7 +6,6 @@ import com.naman.springmvcrest.exceptions.ResourceNotFoundException;
 import com.naman.springmvcrest.mapper.CustomerMapper;
 import com.naman.springmvcrest.model.CustomerDTO;
 import com.naman.springmvcrest.repositories.CustomerRepository;
-import com.naman.springmvcrest.services.CustomerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

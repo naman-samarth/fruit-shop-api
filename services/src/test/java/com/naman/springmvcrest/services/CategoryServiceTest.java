@@ -4,7 +4,6 @@ import com.naman.springmvcrest.domain.Category;
 import com.naman.springmvcrest.mapper.CategoryMapper;
 import com.naman.springmvcrest.model.CategoryDTO;
 import com.naman.springmvcrest.repositories.CategoryRepository;
-import com.naman.springmvcrest.services.impl.CategoryServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -54,7 +53,6 @@ class CategoryServiceTest {
 
         CategoryDTO categoryDTO = categoryService.getCategoryByName("Fruits");
 
-        assertEquals(1L, categoryDTO.getId());
         assertEquals("Fruits", categoryDTO.getName());
     }
 }
